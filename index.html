@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+    <script src="tracks.geojson"></script>
+    <script src="geojson11.geojson"></script>
+    <script src="data/times19_23.js"></script>
+    <script src="data/times11_23.js"></script>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-wrapper blue darken-3">
+        <a href="#" class="brand-logo "><img src="wbound.png" style="height:50px; margin:5px;"></a>
+        <a href="https://www.facebook.com/groups/316556696623788" class="right" target="_blank"><img src="fb.png" style="height:40px; margin:10px;"/></a>
+      </div>
+    </nav>
+
+    <div class="col s12">
+        <div class="slider">
+          <ul class="slides">
+            <li>
+              <img src="photos/start.jpg">
+                <div class="card">
+                  <div class="card-content">
+                    <h4 style="color: orange; font-weight: bold;">Wharfbound</h4>
+                    <h5>Trail run</h5>
+                    <h5>St Andrews, NB (5/18/24)</h5>
+                    <br>
+                    <a onclick="switchmap(geojsonfeatures,'green')" class='btn green white-text chip tooltipped' data-position="bottom" data-tooltip="See 19km map">19km</a>
+                    <a onclick="switchmap(geojson11,'blue')" class='btn blue white-text chip tooltipped' data-position="bottom" data-tooltip="See 11km map">11km</a>
+                  </div>
+                  <div class="card-action">
+                    <a href="https://events.runnb.ca/online-registration/register/paddlefest-wharf-to-wharf-19k-and-11k/485946/?fbclid=IwAR2hyJa665TW9CmaqYdenEDRuUf4yzVGZWwjje77unBHrK_sWRhvhGa2eRo" target="_blank" class="btn orange white-text">Sign up</a>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <img src="photos/bottomocean.jpg" alt="" />
+                <div class="card">
+                  <div class="card-content">
+                    <h4 style="color: orange; font-weight: bold;">Wharfbound</h4>
+                    <h5>Trail run</h5>
+                    <h5>St Andrews, NB (5/20/23)</h5>
+                    <br>
+                    <a onclick="switchmap(geojsonfeatures,'green')" class='btn green white-text chip'>19km</a>
+                    <a onclick="switchmap(geojson11,'blue')" class='btn blue white-text chip'>11km</a>
+                  </div>
+                  <div class="card-action">
+                    <a href="https://events.runnb.ca/online-registration/register/paddlefest-wharf-to-wharf-19k-and-11k/485946/?fbclid=IwAR2hyJa665TW9CmaqYdenEDRuUf4yzVGZWwjje77unBHrK_sWRhvhGa2eRo" target="_blank" class="btn orange white-text">Sign up</a>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <img src="photos/beach.jpg" alt="" />
+                <div class="card">
+                  <div class="card-content">
+                    <h4 style="color: orange; font-weight: bold;">Wharfbound</h4>
+                    <h5>Trail run</h5>
+                    <h5>St Andrews, NB (5/20/23)</h5>
+                    <br>
+                    <a onclick="switchmap(geojsonfeatures,'green')" class='btn green white-text chip'>19km</a>
+                    <a onclick="switchmap(geojson11,'blue')" class='btn blue white-text chip'>11km</a>
+                  </div>
+                  <div class="card-action">
+                    <a href="https://events.runnb.ca/online-registration/register/paddlefest-wharf-to-wharf-19k-and-11k/485946/?fbclid=IwAR2hyJa665TW9CmaqYdenEDRuUf4yzVGZWwjje77unBHrK_sWRhvhGa2eRo" target="_blank" class="btn orange white-text">Sign up</a>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <img src="photos/sa_waterfront.jpg">
+                  <div class="card">
+                    <div class="card-content">
+                      <h4 style="color: orange; font-weight: bold;">Wharfbound</h4>
+                      <h5>Trail run</h5>
+                      <h5>St Andrews, NB (5/20/23)</h5>
+                      <br>
+                      <a onclick="switchmap(geojsonfeatures,'green')" class='btn green white-text chip'>19km</a>
+                      <a onclick="switchmap(geojson11,'blue')" class='btn blue white-text chip'>11km</a>
+                    </div>
+                    <div class="card-action">
+                      <a href="https://events.runnb.ca/online-registration/register/paddlefest-wharf-to-wharf-19k-and-11k/485946/?fbclid=IwAR2hyJa665TW9CmaqYdenEDRuUf4yzVGZWwjje77unBHrK_sWRhvhGa2eRo" target="_blank" class="btn orange white-text">Sign up</a>
+                    </div>
+                  </div>
+                </li>
+            </ul>
+          </div>
+    </div>
+
+    <div class="row white-text" style="margin:0px">
+        <div class="col s12 m3">
+          <div class="pfest">
+            <h6 style="margin-left:5px; margin-top:0px; padding:0px;">Signature outdoor event in the ...</h6>
+            <img src="pfest.png" width="200px;"/>
+            <h6 style="margin-left:5px; margin-top:0px; padding:0px;">Music and outdoor recreation festival</h6>
+            <a href="https://www.facebook.com/PaddlefestNB" target="_blank"><img src="fb.png" width="40px"/></a>
+            <span style="margin-left:10px;"><a href="https://www.paddlefestnb.ca/" target="_blank"><img src="web.png" width="40px"/></a></span>
+          </div>
+        </div>
+        <div class="col s12 m3">
+          <div style="margin-top: 20px; margin-left:5px;">
+            <h6 style="margin-top:0px; padding:0px;">Sponsors</h6>
+            <a class="white-text" href="https://www.saintandrewsbrewco.com/" target="_blank"><img class="tooltipped" data-position="bottom" data-tooltip="St Andrews Brewing Company" src="sabc.png" width="40px;"/></a>
+            <a href="https://explorestandrews.ca/" target="_blank"><img class="tooltipped" data-position="bottom" data-tooltip="Explore St Andrews" src="explore.png" width="50px;"/></a>
+            <a class="white-text" href="https://www.csnbtr.com/" target="_blank"><img class="tooltipped" data-position="bottom" data-tooltip="Trail Running NB" src="trailnb.png" width="60px;"/></a>
+            <a class="white-text" href="https://standrewskiwanis.ca/" target="_blank"><img class="tooltipped" data-position="bottom" data-tooltip="St Andrews Kiwanis" src="kiw.png" width="40px;"/></a>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="white-text">
+            <h5>Challenging and unique</h5>
+            <div class="orange lighten-1 chip"><a class='white-text' href='photos/aerial.jpg' target='_blank'>Maritime resort town</a></div><div class="orange lighten-1 chip chip"><a class='white-text' href='photos/ourtrack.jpg' target='_blank'>Highest tides</a></div><div class="orange lighten-1 chip chip"><a class='white-text' href='photos/headedhome.jpg' target='_blank'>Run to an island</a></div><div class="chip orange lighten-1 chip"><a class='white-text' href='photos/blockhouse.jpg' target='_blank'>National historic sites</a></div><div class="orange lighten-1 chip chip"><a class='white-text' href='photos/lighthouse.jpg' target='_blank'>Lighthouse</a></div><div class="orange lighten-1 chip chip"><a class='white-text' href='photos/bradfinish.jpg' target='_blank'>Wharf ladder finish</a></div>
+            <div class="orange lighten-1 chip chip"><a class='white-text' href='photos/mudlegs.jpg' target='_blank'>Mud</a></div><div class="orange lighten-1 chip chip"><a class='white-text' href='photos/seaweed.jpg' target='_blank'>Sea weed</a></div><div class="orange lighten-1 chip chip"><a class='white-text' href='photos/cut.jpg' target='_blank'>Obstacles</a></div><div class="orange lighten-1 chip chip"><a class='white-text' href='photos/aidstation.jpg' target='_blank'>Fully supported</a></div><div class="orange lighten-1 chip chip"><a class='white-text' href='photos/beer.jpg' target='_blank'>Craft beer!</a></div>
+          </div>
+        </div>
+    </div>
+
+    <div class="row">
+      <div id='map'>
+    </div>
+
+    <div class="white-text">
+      <div style="padding:30px">
+        <h3 class="orange-text text-lighten-1" style="margin:0px">Epic trail run!</h3>
+        <h6>Experience beautiful and historic St. Andrews, NB in a whole new way ... from the bottom of the ocean! This trail run begins and ends at the town wharf and circumnavigates the town and Ministers island. Yes, you can actually run to and around an island on this race. The Bay of Fundy has the highest tidal range in the world, permitting an unique outdoor experience. </h6>
+      </div>
+    </div>
+
+    <div class="grey lighten-3">
+      <div style="padding-left:30px; padding-right:30px; padding-bottom: 30px">
+        <div id="data-19"></div>
+        <div id="data-11"></div>
+        <!-- Modal Trigger -->
+        <div><br>
+          <h3 class="blue-text" style="margin:0px">Runners times</h3>
+          <h6>Find your time(s) and get motivated for next year by scrolling and sorting other runners race times.</h6><br>
+          <button data-target="modal1" class="btn-small green lighten-1 white-text modal-trigger">19km</button>
+          <button data-target="modal2" class="btn-small blue lighten-1 white-text modal-trigger">11km</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div style="padding: 20px; padding-top:40px">
+        <div class="col s12 m2">
+          <img class="materialboxed" data-caption="Yummy catered breakfast afterwards by The Fundy Foodie" width="200" src="photos/fundyfood.jpg">
+        </div>
+        <div class="col s12 m2">
+          <img class="materialboxed" data-caption="Cross the Katys Cove outlet safely using the rope." width="200" src="photos/katyrope.jpg">
+        </div>
+        <div class="col s12 m2">
+          <img class="materialboxed" data-caption="You are not done until you climb up to the wharf!" width="200" src="photos/ladderteeth.jpg">
+        </div>
+        <div class="col s12 m2">
+          <img class="materialboxed" data-caption="Runners enjoying a pint afterwards at St Andrews Brewery" width="200" src="photos/iankyle.jpg">
+        </div>
+        <div class="col s12 m2">
+          <img class="materialboxed" data-caption="Safety first! The race is fully supported, on land and sea." width="200" src="photos/safeboat.jpg">
+        </div>
+        <div class="col s12 m2">
+          <img class="materialboxed" data-caption="The last mile after the lighthouse!" width="200" src="photos/kurtlhouse.jpeg">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div style="padding: 20px; padding-top:20px">
+        <div class="col s12 m2">
+          <img class="materialboxed" data-caption="Paddlefest in Market Sqare in St Andrews, NB" width="200" src="photos/paddlefest.jpg">
+        </div>
+        <div class="col s12 m2">
+          <img class="materialboxed" data-caption="Happy finishers enjoying some craft beer" width="200" src="photos/after.jpg">
+        </div>
+        <div class="col s12 m2">
+          <img class="materialboxed" data-caption="Climb the ladder to finish!" width="200" src="photos/bradfinish.jpg">
+        </div>
+        <div class="col s12 m2">
+          <img class="materialboxed" data-caption="Wharfbound is so much fun!" width="200" src="photos/dressup.jpg">
+        </div>
+        <div class="col s12 m2">
+          <img class="materialboxed" data-caption="Descend to the starting line on the ocean bottom." width="200" src="photos/thestart.jpg">
+        </div>
+        <div class="col s12 m2">
+          <img class="materialboxed" data-caption="Challenge completed! Runners relaxing on the wharf." width="200" src="photos/runners.jpg">
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-footer blue darken-3">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h4 class="orange-text text-lighten-1">Wharfbound</h4>
+            <h6 class="white-text">Challenging and unique trail run on the bottom of the ocean.</h6>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h4 class="orange-text text-lighten-1">Sponsors</h4>
+            <ul>
+              <li><a class="white-text" href="https://explorestandrews.ca/" target="_blank">Explore Saint Andrews</a></li>
+              <li><a class="white-text" href="https://www.paddlefestnb.ca/" target="_blank">Paddlefest</a></li>
+              <li><a class="white-text" href="https://www.saintandrewsbrewco.com/" target="_blank">St Andrews Brewing Company</a></li>
+              <li><a class="white-text" href="https://www.csnbtr.com/" target="_blank">Trail Running NB</a></li
+              <li><a class="white-text" href="https://standrewskiwanis.ca/" target="_blank">St Andrews Kiwanis</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2023 Wharfbound
+        </div>
+      </div>
+    </footer>
+  </body>
+
+  <script type="text/javascript">
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.tooltipped');
+      var instances = M.Tooltip.init(elems);
+      var mods = document.querySelectorAll('.modal');
+      var modints = M.Modal.init(mods);
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.materialboxed');
+      var instances = M.Materialbox.init(elems);
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.slider');
+      var instances = M.Slider.init(elems);
+    });
+
+    map = new L.Map('map');
+    var cartocdn = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png';
+    carto = new L.TileLayer(cartocdn);
+    map.setView([45.085,-67.06],12.35); // centered on SA lat, long
+    map.addLayer(carto);
+    map.scrollWheelZoom.disable();
+
+    var myStyle = {
+        "color": "blue",
+        "weight": 2
+    };
+    var little = L.geoJSON(geojson11,{style: myStyle});
+    var myStyle = {
+        "color": "green",
+        "weight": 2
+    };
+    var full = L.geoJSON(geojsonfeatures,{style: myStyle});
+    full.addTo(map);
+
+    function switchmap(geojson,c) {
+      if (c == 'green') {
+        map.removeLayer(little);
+        full.addTo(map);
+      } else {
+        map.removeLayer(full);
+        little.addTo(map,{style: myStyle});
+      }
+    }
+
+    maketable(data,"data-19","modal1","table1","green");
+    maketable(data11,"data-11","modal2","table2","blue");
+
+    function maketable(thedata,thediv,themodal,thetable,mycolor) {
+      handle = document.getElementById(thediv);
+      myhtml = "<div id='" + themodal + "' class='modal'><div class='modal-content'>";
+      myhtml = myhtml + "<h4 class='" + mycolor + "-text'>Runners times</h4>";
+      myhtml = myhtml + "<p class='black-text'>View all runners times below and sort by columns to analyse performances.</p>"
+      myhtml = myhtml + "<table id='" + thetable + "' class='striped gray'>";
+      myhtml = myhtml + "<tr class='" + mycolor + " white-text' style='cursor:pointer'>";
+      text = "'" + thetable + "'";
+      myhtml = myhtml + "<th onclick=sortTable(0," + text + ")>Athlete</th>";
+      myhtml = myhtml + "<th onclick=sortTable(1," + text + ")>Time</th>";
+      myhtml = myhtml + "<th onclick=sortTable(2," + text + ")>Year</th>";
+      myhtml = myhtml + "</tr>";
+
+      for (i=0; i<thedata.length; i++) {
+        myhtml = myhtml + "<tr class='black-text'>";
+        myhtml = myhtml + "<td>" + thedata[i]['Athlete'] + "</td>";
+        myhtml = myhtml + "<td>" + thedata[i]['Chrono'] + "</td>";
+        myhtml = myhtml + "<td>" + thedata[i]['Year'] + "</td>";
+        myhtml = myhtml + "</tr>";
+      }
+
+      myhtml = myhtml + "</div>";
+      myhtml = myhtml + "</div></div>";
+      handle.innerHTML = myhtml;
+    }
+
+    function sortTable(n,thetable) {
+      var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+      table = document.getElementById(thetable);
+      switching = true;
+      //Set the sorting direction to ascending:
+      dir = "asc";
+      /*Make a loop that will continue until
+      no switching has been done:*/
+      while (switching) {
+        //start by saying: no switching is done:
+        switching = false;
+        rows = table.rows;
+        /*Loop through all table rows (except the
+        first, which contains table headers):*/
+        for (i = 1; i < (rows.length - 1); i++) {
+          //start by saying there should be no switching:
+          shouldSwitch = false;
+          /*Get the two elements you want to compare,
+          one from current row and one from the next:*/
+          x = rows[i].getElementsByTagName("TD")[n];
+          y = rows[i + 1].getElementsByTagName("TD")[n];
+          /*check if the two rows should switch place,
+          based on the direction, asc or desc:*/
+          if (dir == "asc") {
+            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+              //if so, mark as a switch and break the loop:
+              shouldSwitch= true;
+              break;
+            }
+          } else if (dir == "desc") {
+            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+              //if so, mark as a switch and break the loop:
+              shouldSwitch = true;
+              break;
+            }
+          }
+        }
+        if (shouldSwitch) {
+          /*If a switch has been marked, make the switch
+          and mark that a switch has been done:*/
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+          //Each time a switch is done, increase this count by 1:
+          switchcount ++;
+        } else {
+          /*If no switching has been done AND the direction is "asc",
+          set the direction to "desc" and run the while loop again.*/
+          if (switchcount == 0 && dir == "asc") {
+            dir = "desc";
+            switching = true;
+          }
+        }
+      }
+    }
+
+  </script>
+</html>

@@ -1,0 +1,35 @@
+body {
+  background-color: #1565c0;
+}
+
+.pfest {
+  color: white;
+  margin:20px;
+}
+
+.card {
+  position:absolute;
+  right:20px;
+  top:20px;
+  opacity: 80%
+}
+
+.slider {
+  height: 400px!important;
+}
+
+.slider .slides {
+  height: 400px;
+}
+
+.slider .indicators {
+  bottom: 20px;
+  z-index: 100;
+  color: orange;
+}
+
+.slider .indicators .indicator-item.active {
+  background-color: orange;
+}
+
+#map { height: 300px; }

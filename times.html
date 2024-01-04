@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="data/times19_23.js"></script>
+    <script src="data/times11_23.js"></script>
+  </head>
+  <body class='white'>
+    <nav>
+      <div class="nav-wrapper blue darken-3">
+        <a href="#" class="brand-logo "><img src="logo.png" style="height:50px; margin:5px;"></a>
+        <a href="https://www.facebook.com/groups/316556696623788" class="right" target="_blank"><img src="fb.png" style="height:40px; margin:10px;"/></a>
+      </div>
+    </nav>
+
+    <div class='white' style='margin:50px'>
+      <h4 class='orange-text lighten-1'>Runners times</h4>
+      <p>Click on columns to sort all time runner data.</p>
+
+      <button class="waves-effect waves-light btn-small" onclick="maketable(data)">19km</button>
+      <button class="waves-effect waves-light btn-small" onclick="maketable(data11)">11km</button>
+
+      <div id="thediv"></div>
+    </div>
+
+  </body>
+
+  <script>
+
+    maketable(data);
+    //maketable(data11);
+
+    function maketable(thedata) {
+      console.log(thedata);
+      handle = document.getElementById('thediv');
+      myhtml = "";
+      myhtml = myhtml + "<table id='myTable' class='striped gray'>";
+      myhtml = myhtml + "<tr class='blue-text darken-3' style='cursor:pointer'>";
+      myhtml = myhtml + "<th onclick='sortTable(0)'>Athlete</th>";
+      myhtml = myhtml + "<th onclick='sortTable(1)'>Time</th>";
+      myhtml = myhtml + "<th onclick='sortTable(2)'>Year</th>";
+      myhtml = myhtml + "</tr>";
+
+      for (i=0; i<thedata.length; i++) {
+        myhtml = myhtml + "<tr class='blue-text darken-2'>";
+        myhtml = myhtml + "<td>" + thedata[i]['Athlete'] + "</td>";
+        myhtml = myhtml + "<td>" + thedata[i]['Chrono'] + "</td>";
+        myhtml = myhtml + "<td>" + thedata[i]['Year'] + "</td>";
+        myhtml = myhtml + "</tr>";
+      }
+
+      myhtml = myhtml + "</table>";
+      handle.innerHTML = myhtml;
+    }
+
+    function sortTable(n) {
+      var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+      table = document.getElementById("myTable");
+      switching = true;
+      //Set the sorting direction to ascending:
+      dir = "asc";
+      /*Make a loop that will continue until
+      no switching has been done:*/
+      while (switching) {
+        //start by saying: no switching is done:
+        switching = false;
+        rows = table.rows;
+        /*Loop through all table rows (except the
+        first, which contains table headers):*/
+        for (i = 1; i < (rows.length - 1); i++) {
+          //start by saying there should be no switching:
+          shouldSwitch = false;
+          /*Get the two elements you want to compare,
+          one from current row and one from the next:*/
+          x = rows[i].getElementsByTagName("TD")[n];
+          y = rows[i + 1].getElementsByTagName("TD")[n];
+          /*check if the two rows should switch place,
+          based on the direction, asc or desc:*/
+          if (dir == "asc") {
+            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+              //if so, mark as a switch and break the loop:
+              shouldSwitch= true;
+              break;
+            }
+          } else if (dir == "desc") {
+            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+              //if so, mark as a switch and break the loop:
+              shouldSwitch = true;
+              break;
+            }
+          }
+        }
+        if (shouldSwitch) {
+          /*If a switch has been marked, make the switch
+          and mark that a switch has been done:*/
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+          //Each time a switch is done, increase this count by 1:
+          switchcount ++;
+        } else {
+          /*If no switching has been done AND the direction is "asc",
+          set the direction to "desc" and run the while loop again.*/
+          if (switchcount == 0 && dir == "asc") {
+            dir = "desc";
+            switching = true;
+          }
+        }
+      }
+    }
+
+  </script>
+</html>
