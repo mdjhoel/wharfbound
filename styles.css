@@ -1,5 +1,10 @@
 body {
-  background-color: #1565c0;
+  background-color: #95b9b0;
+}
+
+.page-footer {
+  background-color: #95b9b0;
+  color: #b42836;
 }
 
 .pfest {
@@ -11,7 +16,11 @@ body {
   position:absolute;
   right:20px;
   top:20px;
-  opacity: 80%
+  opacity: 80%;
+}
+
+.chip {
+  background-color: #b42836;
 }
 
 .slider {
@@ -22,14 +31,23 @@ body {
   height: 400px;
 }
 
+.btn {
+  color: white;
+  background-color: #b42836;
+}
+
+.btn:hover {
+  background-color: #2f364a;
+}
+
 .slider .indicators {
   bottom: 20px;
   z-index: 100;
-  color: orange;
+  color: #b42836;
 }
 
 .slider .indicators .indicator-item.active {
-  background-color: orange;
+  background-color: #b42836;
 }
 
 #map { height: 300px; }
