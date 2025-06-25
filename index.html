@@ -19,8 +19,9 @@
     <script src="tracks.geojson"></script>
     <script src="geojson11.geojson"></script>
     <script src="geojson5.geojson"></script>
-    <script src="data/times19_24.js"></script>
-    <script src="data/times11_24.js"></script>
+    <script src="data/times19_25.js"></script>
+    <script src="data/times11_25.js"></script>
+    <script src="data/times5_25.js"></script>
   </head>
   <body>
     <nav style="background-color: #95b9b0">
@@ -160,12 +161,14 @@
       <div style="padding-left:30px; padding-right:30px; padding-bottom: 30px">
         <div id="data-19"></div>
         <div id="data-11"></div>
+        <div id="data-5"></div>
         <!-- Modal Trigger -->
         <div><br>
           <h3 style="margin:0px; color: #2f364a">Runners times</h3>
           <h6>Find your time(s) and get motivated for next year by scrolling and sorting other runners race times.</h6><br>
           <button data-target="modal1" class="btn-small modal-trigger" style="color:white;background-color: #2f364a;">19km</button>
           <button data-target="modal2" class="btn-small blue lighten-1 white-text modal-trigger">11km</button>
+          <button data-target="modal3" class="btn-small orange lighten-1 white-text modal-trigger">5km</button>
         </div>
       </div>
     </div>
@@ -212,6 +215,29 @@
         </div>
         <div class="col s12 l2">
           <img class="materialboxed" data-caption="Challenge completed! Runners relaxing on the wharf." width="100%" src="photos/runners.jpg">
+        </div>
+      </div>
+    </div>
+
+      <div class="row">
+      <div style="padding: 20px; padding-top:20px">
+        <div class="col s12 l2">
+          <img class="materialboxed" data-caption="And they're off! Wharfbound 2025" width="100%" src="photos/start.jpeg">
+        </div>
+        <div class="col s12 l2">
+          <img class="materialboxed" data-caption="Happy runner enjoying the unique Wharfbound finishline" width="100%" src="photos/smilefinish.jpeg">
+        </div>
+        <div class="col s12 l2">
+          <img class="materialboxed" data-caption="You finished Wharfbound, I'm so proud of you!" width="100%" src="photos/finishhug.jpeg">
+        </div>
+        <div class="col s12 l2">
+          <img class="materialboxed" data-caption="Best finish line ever!" width="100%" src="photos/topladder25.jpeg">
+        </div>
+        <div class="col s12 l2">
+          <img class="materialboxed" data-caption="Great job daddy!" width="100%" src="photos/kidsfinish.jpeg">
+        </div>
+        <div class="col s12 l2">
+          <img class="materialboxed" data-caption="Running on the bottom of the ocean." width="100%" src="photos/barr25.png">
         </div>
       </div>
     </div>
@@ -305,6 +331,7 @@
 
     maketable(data,"data-19","modal1","table1","#2f364a");
     maketable(data11,"data-11","modal2","table2","blue");
+    maketable(data5,"data-5","modal3","table3","orange");
 
     function maketable(thedata,thediv,themodal,thetable,mycolor) {
       handle = document.getElementById(thediv);
